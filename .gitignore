@@ -1,0 +1,12 @@
+db
+output_files
+greybox_tmp
+incremental_db
+
+#仿真文件
+/simulation/modelsim/*
+!/simulation/modelsim/*.vt
+
+*.qsf
+*.bak
+*.rpt
