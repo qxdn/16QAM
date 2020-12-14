@@ -5,7 +5,10 @@ incremental_db
 
 #仿真文件
 /simulation/modelsim/*
+/simulation/qsim/*
 !/simulation/modelsim/*.vt
+!/simulation/modelsim/data
+
 
 *.qsf
 *.bak
