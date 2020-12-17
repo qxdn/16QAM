@@ -5,6 +5,7 @@ module mod_16QAM(signal_clk,carrier_clk,reset_n,mod_out);
 input signal_clk,carrier_clk,reset_n;
 output signed [8:0] mod_out;
 
+
 //载波
 wire signed [7:0] carrier_sin;
 wire signed [7:0] carrier_cos;
@@ -13,12 +14,11 @@ wire signed [7:0] carrier_cos;
 wire signed [7:0] carrier_i;
 wire signed [7:0] carrier_q;
 
-wire clk_4div; //四分频
-wire serial_data; //串行数据
-wire [3:0] p_data; //并行数据
 wire signed [1:0] signal_I; //I 信号
 wire signed [1:0] signal_Q; //Q 信号
-
+wire [3:0] p_data; //并行数据
+wire serial_data; //串行数据
+wire clk_4div; //四分频
 
 assign signal_I = {p_data[3],p_data[1]};
 assign signal_Q = {p_data[2],p_data[0]};
@@ -26,7 +26,7 @@ assign signal_Q = {p_data[2],p_data[0]};
 assign mod_out = carrier_i + carrier_q;
 
 //四分频
-freq_div #(.DIV(2'd4)) u_div4(
+freq_div #(.DIV(4)) u_div4(
 	.orgin_clk(signal_clk),
 	.reset_n(reset_n),
 	.out_clk(clk_4div)

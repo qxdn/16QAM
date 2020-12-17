@@ -1,0 +1,74 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/16/2020 22:49:17"
+                                                                                
+// Verilog Test Bench template for design : mod_16QAM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 10 ns/ 10 ns
+module mod_16QAM_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg carrier_clk;
+reg reset_n;
+reg signal_clk;
+// wires                                               
+wire [8:0]  mod_out;
+
+// assign statements (if any)                          
+mod_16QAM i1 (
+// port map - connection between master ports and signals/registers   
+	.carrier_clk(carrier_clk),
+	.mod_out(mod_out),
+	.signal_clk(signal_clk),
+	.reset_n(reset_n)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+                                                       
+// --> end 
+	#0 reset_n = 1'b0;
+   #0 carrier_clk = 1'b0;
+	#0 signal_clk = 1'b0;
+	#1 reset_n = 1'b1;
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+   #2 carrier_clk = ~carrier_clk; //25M                                                   
+                  
+// --> end                                             
+end        
+
+always
+begin
+   #500 signal_clk =~signal_clk; //100k   
+end                                           
+endmodule
+
