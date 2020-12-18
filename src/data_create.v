@@ -5,7 +5,7 @@ module data_create(clk,reset_n,out);
 input clk,reset_n;
 output wire out;
 
-localparam CODE = 16'b1001_1111_0101_0110;
+reg [0:15] CODE = 16'b1010_0111_1101_0001;
 
 reg [3:0] address = 4'b0000;
 

@@ -24,7 +24,7 @@
 // Simulation tool : ModelSim-Altera (Verilog)
 // 
 
-`timescale 1 ns/ 1 ns
+`timescale 10 ns/ 10 ns
 module carrier_generator_vlg_tst();
 // constants                                           
 // general purpose registers

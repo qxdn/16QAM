@@ -1,10 +1,12 @@
 /*
 * 16QAM调制
 */
-module mod_16QAM(signal_clk,carrier_clk,reset_n,mod_out);
+module mod_16QAM(signal_clk,carrier_clk,reset_n,mod_out,serial_data);
 input signal_clk,carrier_clk,reset_n;
 output signed [8:0] mod_out;
+output wire serial_data; //串行数据
 
+wire [3:0] p_data; //并行数据
 
 //载波
 wire signed [7:0] carrier_sin;
@@ -13,11 +15,9 @@ wire signed [7:0] carrier_cos;
 //调制后载波
 wire signed [7:0] carrier_i;
 wire signed [7:0] carrier_q;
+wire [1:0] signal_I; //I 信号
+wire [1:0] signal_Q; //Q 信号
 
-wire signed [1:0] signal_I; //I 信号
-wire signed [1:0] signal_Q; //Q 信号
-wire [3:0] p_data; //并行数据
-wire serial_data; //串行数据
 wire clk_4div; //四分频
 
 assign signal_I = {p_data[3],p_data[1]};

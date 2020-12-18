@@ -12,8 +12,8 @@ always @(posedge clk) begin
 		2'b00: out<= carrier*3'd1;
 		2'b01: out<= carrier*3'd3;
 		2'b10: out<= carrier*-3'd1;
-		2'b11: out<= carrier*-3'd1;
-		default:;
+		2'b11: out<= carrier*-3'd3;
+		default: ;
 	endcase
 end
 
