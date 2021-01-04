@@ -6,5 +6,7 @@
 
 [other](./other)里面是matlab进行正余弦采样和滤波器设计的代码
 
+[报告](https://github.com/qxdn/16QAM/releases/download/1.0.0/default.pdf)
+
 ## TODO
-- [ ] 上传报告 
+- [x] 上传报告 
